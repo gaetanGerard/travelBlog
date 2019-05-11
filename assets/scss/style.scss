@@ -262,6 +262,105 @@ header {
             }
         }
     }
+    .recentPost-container {
+        width: 100vw;
+        height: 640px;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        .recentPost {
+            width: 640px;
+            min-width: 640px;
+            height: 100%;
+            position: relative;
+            .dark-overlay {
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 950;
+            }
+            .bg-image {
+                 position: absolute;
+                 top: 0;
+                 left: 0;
+                 width: auto;
+                 min-width: 640px;
+                 height: 100%;
+                 margin: auto;
+                 z-index: 900;
+            }
+
+             .content-title {
+                 width: 95%;
+                 height: 175px;
+                 position: absolute;
+                 bottom: 30px;
+                 left: 2.5%;
+                 z-index: 1000;
+                 color: $white-color;
+
+                 .title {
+                     font-size: $title-size;
+                     font-weight: 500;
+                     height: 75px;
+                     margin-bottom: 15px;
+                     box-sizing: border-box;
+                     line-height: 1em;
+                     transition: $transition;
+                 }
+                 .content {
+                     width: 100%;
+                     display: flex;
+                     .infos-auteur {
+                         height: 100%;
+                         box-sizing: border-box;
+                         border-right: 1px solid $white-color;
+                         display: flex;
+                         .photo-container {
+                            width: 72px;
+                            height: 72px;
+                            border-radius: 100%;
+                            overflow: hidden;
+                            position: relative;
+                            margin-right: 15px;
+                            .auteur-photo {
+                                position: absolute;
+                                width: 72px;
+                                top: -20px;
+                                left: -5px;
+                            }
+                         }
+                         .infos {
+                             .auteur-name {
+                                 font-size: 0.9em;
+                                 font-weight: 500;
+                             }
+
+                             .post-calendar {
+                                 font-size: 0.7em;
+
+                                 i {
+                                     font-size: 0.8em;
+                                 }
+                             }
+                         }
+                     }
+                     .post-intro {
+                         width: 65%;
+                         font-size: 1em;
+                         line-height: 1em;
+                         margin-left: 15px;
+                     }
+                 }
+            }
+            &:hover .content-title .title {
+                color: $hoverAndFocus-color;
+            }
+        }
+    }
 
 }
 
