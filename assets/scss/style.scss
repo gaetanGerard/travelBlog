@@ -1,0 +1,267 @@
+@import "reset";
+@import "config";
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+    color: $primary-color;
+    width: $viewWidth;
+    overflow-x: hidden;
+}
+
+// Navigation style
+
+header {
+    width: 100vw;
+    height: 100vh;
+    nav {
+        width: 100vw;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .top-nav {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 125px;
+            background-color: $primary-color;
+
+            .loginConnected-container {
+                position: relative;
+                width: 260px;
+                height: 125px;
+
+                .login {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    // display: none;  //Permet de cacher ou montrer le bouton se connecter ou s'enregistrer
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    color: $white-color;
+
+                    a {
+                        @include linkStyle($white-color);
+                    }
+
+                    .btn {
+                        @include button;
+                    }
+                }
+
+                .connected {
+                    width: 100%;
+                    height: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    // display: flex; //permet de révéler la div de profil une fois l'utilisateur connecter
+                    display: none;
+                    flex-direction: row;
+
+                    .username-container {
+                        display: flex;
+                        align-items: center;
+
+                        p {
+                            display: flex;
+                            align-items: center;
+                            @include linkStyle($white-color);
+                            font-size: 2em;
+                            font-weight: 300;
+                            cursor: pointer;
+
+                            i {
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+
+                .profil {
+                    display: none;
+                    min-width: 260px;
+                    border-radius: 15px;
+                    background-color: $primary-color;
+                    color: $white-color;
+                    padding: 6px;
+                    box-sizing: border-box;
+
+                    &.popup-overlay {
+                        position: absolute;
+                        top: 20px;
+                        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
+                        &.active {
+                            display: block;
+                        }
+                    }
+
+                    .popup-head {
+                        position: relative;
+                        display: flex;
+                        height: 100px;
+
+                        .username-container {
+                            display: flex;
+                            align-items: center;
+                            position: absolute;
+                            top: 25px;
+                            right: 50px;
+
+                            h2 {
+                                font-size: 1.4em;
+                                letter-spacing: 1px;
+                            }
+                        }
+
+                        .close {
+                            position: absolute;
+                            top: 10px;
+                            right: 10px;
+                            background-color: transparent;
+                            border: none;
+                            font-size: 1.3em;
+                            color: $white-color;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .popup-body {
+                        display: flex;
+                        flex-direction: column;
+                        position: relative;
+
+                        .popup-link {
+                            padding: 8px 0;
+                            letter-spacing: 0.8px;
+                            font-size: 1.5em;
+                            @include linkStyle($white-color);
+                            border-bottom: 1px solid $white-color;
+                            font-weight: 500;
+                            position: relative;
+                            display: flex;
+                            cursor: pointer;
+
+                            .nMBubble {
+                                @include bubleStyle;
+                                width: 22px;
+                                padding: 3px;
+                                top: 1em;
+                                left: 85%;
+                            }
+
+                            &:hover .nMBubble {
+                                @include bubleHoverStyle;
+                            }
+                        }
+
+                        .btn {
+                            margin-top: 16px;
+                            margin-left: -5px;
+                            @include button;
+                            font-size: 1.5em;
+                            height: 100%;
+                            padding: 5px;
+                        }
+                    }
+
+                    .panel {
+                        border: 1px solid $white-color;
+                        padding: 2px;
+                        background-color: lighten($primary-color, 5);
+                        width: 100%;
+                        height: 0;
+                        overflow-x: hidden;
+                        overflow-y: auto;
+                        display: none;
+                        transition: $transition;
+
+                        &.active {
+                            display: block;
+                            height: 200px;
+                        }
+
+                        .message-container {
+                            width: 100%;
+                            padding: 2px 2px;
+                            height: 75px;
+                            box-sizing: border-box;
+                            line-height: 0.9em;
+                            background-color: $primary-color;
+                            transition: $transition;
+
+                            &:hover {
+                                background-color: darken($primary-color, 5);
+                            }
+
+                            h2 {
+                                display: inline-block;
+                                border-bottom: 1px solid $white-color;
+                                font-size: 0.9em;
+                                margin-bottom: 5px;
+
+                                i {
+                                    margin-right: 2px;
+                                }
+                            }
+
+                            .content {
+                                display: flex;
+                                align-items: center;
+                                font-size: 0.9em;
+
+                                a {
+                                    display: block;
+                                    font-size: 1.2em;
+                                    margin-right: 8px;
+                                    @include linkStyle($white-color);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottom-nav {
+            width: 100%;
+            padding: 0 20%;
+            box-sizing: border-box;
+
+            ul {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+                align-items: center;
+                height: 125px;
+                font-size: $title-size;
+
+                li {
+                    a {
+                        display: block;
+                        @include linkStyle($primary-color);
+
+                        &::after {
+                            content: " ";
+                            display: block;
+                            width: 0;
+                            height: 2px;
+                            background-color: $hoverAndFocus-color;
+                            transition: $transition;
+                        }
+                    }
+
+                    a:hover::after {
+                        width: 75px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
