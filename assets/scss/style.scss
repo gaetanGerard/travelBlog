@@ -274,6 +274,7 @@ header {
             min-width: 640px;
             height: 100%;
             position: relative;
+            overflow: hidden;
             .dark-overlay {
                 width: 100%;
                 height: 100%;
@@ -292,6 +293,7 @@ header {
                  height: 100%;
                  margin: auto;
                  z-index: 900;
+                 transition: $transition;
             }
 
              .content-title {
@@ -359,6 +361,9 @@ header {
             }
             &:hover .content-title .title {
                 color: $hoverAndFocus-color;
+            }
+            &:hover .bg-image {
+                transform: scale(1.1);
             }
         }
         .sliderNav-item {
