@@ -3,6 +3,12 @@
 // * Style général d'un poste set paramètre hauteur et display pour les postes pour pouvoir réutilister 
 // * les même attribut pour le poste vedette en ne changeant que les paramètres
 
+                                    // *
+                                    // *
+                                    // ! DEBUT style du container du post ainsi que de l'image
+                                    // *
+                                    // *
+
 @mixin postGeneralShape($height: 394px, $display: flex) {
     display: $display;
     width: 100%;
@@ -44,6 +50,18 @@
 
 // * Style général de la boite d'infos auteur/tags/social 
 // ? paramètre à réutiliser gridGap et padding
+
+                                    // *
+                                    // *
+                                    // ! FIN style du container du post ainsi que de l'image
+                                    // *
+                                    // *
+
+                                    // *
+                                    // *
+                                    // ! DEBUT style du container auteur, tags et social
+                                    // *
+                                    // *
 
 @mixin postAuthorTagsSocial($gridGap: 5px, $padding: 5px) {
     width: 100%;
@@ -95,9 +113,9 @@
 // * Style des items tags 
 // ? paramètre à réutiliser margin
 
-@mixin listItem($margin: 0 3px) {
+@mixin listItem($margin: 0 10px) {
     margin: $margin;
-    width: 100%;
+    text-align: center;
     height: 100%;
     box-sizing: border-box;
 }
@@ -105,11 +123,12 @@
 // * Style des bouton tags
 // ? paramètre à réutiliser padding, fontSize
 
-@mixin tagsButton($padding: 3px 6px, $fontSize: 0.92em) {
+@mixin tagsButton($padding: 3px 3px, $fontSize: 0.92em, $borderRadius : 12px) {
+    width: 100%;
     padding: $padding;
     font-size: $fontSize;
     border: 1px solid $primary-color;
-    border-radius: 30px;
+    border-radius: $borderRadius;
     transition: $transition;
     &:hover {
         border-color: $hoverAndFocus-color;
@@ -145,3 +164,56 @@
          color: $hoverAndFocus-color;
      }
 }
+
+                                    // *
+                                    // *
+                                    // ! Fin style du container auteur, tags et social
+                                    // *
+                                    // *
+
+
+                                    // *
+                                    // *
+                                    // ! DEBUT style du container content
+                                    // *
+                                    // *
+
+@mixin postContent {
+    padding: 20px 2%;
+}
+
+@mixin title($title: $medium-title-size) {
+    transition: $transition;
+    font-size: $title;
+    line-height: 1.2em;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+@mixin btnContainer {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    height: 32px;
+}
+
+@mixin btn {
+    @include buttonPost($medium-title-size, 100%);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    position: absolute;
+}
+
+@mixin btnVedette {
+    @include buttonPost;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+                                    // *
+                                    // *
+                                    // ! FIN style du container auteur, tags et social
+                                    // *
+                                    // *
