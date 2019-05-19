@@ -44,6 +44,8 @@ $(document).ready(function() {
     let currentPosition = 0;
     let count = 0;
 
+    console.log(slider_content);
+
 
     next.on("click", function() {
 
@@ -57,7 +59,7 @@ $(document).ready(function() {
             nextPosition(currentPosition);
 
             if(count >= 3) {
-                resetPositive();
+                resetPositive(2);
             }
         }
     });
@@ -83,8 +85,8 @@ $(document).ready(function() {
         }
     });
 
-    function resetPositive () {
-        if (count >= 3) {
+    function resetPositive (index) {
+        if (count >= slider_content.length - index) {
             count = 0;
             currentPosition = 0;
         }

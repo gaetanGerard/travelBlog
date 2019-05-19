@@ -1,5 +1,6 @@
 @import "reset";
 @import "config";
+@import "postStyle";
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -49,7 +50,9 @@ header {
                     }
 
                     .btn {
-                        @include button;
+                        &.btn-header {
+                            @include button;
+                        }
                     }
                 }
 
@@ -322,20 +325,6 @@ header {
                          box-sizing: border-box;
                          border-right: 1px solid $white-color;
                          display: flex;
-                         .photo-container {
-                            width: 72px;
-                            height: 72px;
-                            border-radius: 100%;
-                            overflow: hidden;
-                            position: relative;
-                            margin-right: 15px;
-                            .auteur-photo {
-                                position: absolute;
-                                width: 72px;
-                                top: -20px;
-                                left: -5px;
-                            }
-                         }
                          .infos {
                              .auteur-name {
                                  font-size: 0.9em;
@@ -388,5 +377,156 @@ header {
         }
     }
 
+}
+
+#main {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 60% 18%;
+    grid-column-gap: 20px;
+    padding: 15px;
+    justify-content: center;
+    .post-container {
+        width: 100%;
+        .post {
+            @include postGeneralShape;
+            .post-header {
+                @include postHeader;
+                a {
+                    @include anchorStyle;
+                    img {
+                        @include imageStyle;
+                    }
+                }
+                .postAuthor-tags-social {
+                    @include postAuthorTagsSocial;
+
+                    .authorInfos {
+                        @include authorInfos;
+
+                        .photo-container {
+                            @include photo-container(48px, 48px);
+                            .auteur-photo {
+                                @include auteur-photo(48px);
+                            }
+                        }
+
+                        .infos {
+                            @include infos;
+                        }
+                    }
+
+                    .post-tags {
+                        @include postTags;
+
+                        ul {
+                            @include unordoredList;
+
+                            li {
+                                @include listItem;
+
+                                .tags-button {
+                                    @include tagsButton;
+                                }
+                            }
+                        }
+
+                    }
+
+                    .social {
+                        @include social;
+
+                        .social-button {
+                            @include socialButton;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                .post-header {
+                    a {
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+                .post-content {
+                    .title {
+                        color: $hoverAndFocus-color;
+                    }
+                }
+            }
+        }
+        .post-vedette {
+            @include postGeneralShape(925px, block);
+            .post-header {
+                @include postHeader(600px);
+                a {
+                    @include anchorStyle(600px);
+                    img {
+                        @include imageStyle(auto);
+                    }
+                }
+                .postAuthor-tags-social {
+                    @include postAuthorTagsSocial(15px, 10px);
+                    .authorInfos {
+                        @include authorInfos(space-between);
+                        .infos {
+                            @include infos(1.1em);
+                        }
+                        .photo-container {
+                            @include photo-container;
+
+                            .auteur-photo {
+                                @include auteur-photo;
+                            }
+                        }
+                    }
+                    .post-tags {
+                        @include postTags($alignItems: flex-end);
+                        ul {
+                            @include unordoredList;
+                            li {
+                                @include listItem(0 5px);
+                                .tags-button {
+                                    @include tagsButton(7px 15px, 1.1em);
+                                }
+                            }
+                        }
+
+                    }
+                    .social {
+                        @include social(1.5em);
+                        .social-button {
+                            @include socialButton($alignItems: flex-end);
+                        }
+                    }
+                }
+            }
+            .post-content {
+                padding: 20px 2%;
+                .title {
+                    transition: $transition;
+                    font-size: $title-size;
+                    font-weight: 400;
+                    margin: 20px 0;
+                }
+                p {
+                    margin: 20px 0;
+                    line-height: 1.5em;
+                }
+                .btn-container {
+                    display: flex;
+                    justify-content: flex-end;
+                    .btn {
+                        @include buttonPost;
+                        display: inline-block;
+                        padding: 10px 20px;
+                        border-radius: 20px;
+                    }
+                }
+            }
+        }
+    }
 }
 

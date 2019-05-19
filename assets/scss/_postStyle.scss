@@ -1,0 +1,147 @@
+// ! le paramètrage par défaut des fonctions sont établis pour le style des postes généraux
+
+// * Style général d'un poste set paramètre hauteur et display pour les postes pour pouvoir réutilister 
+// * les même attribut pour le poste vedette en ne changeant que les paramètres
+
+@mixin postGeneralShape($height: 394px, $display: flex) {
+    display: $display;
+    width: 100%;
+    height: $height;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+// * Style général du header d'un poste avec un seul paramètre à réutiliser la hauteur 
+
+@mixin postHeader($height: 394px) {
+    min-width: 70%;
+    height: $height;
+    position: relative;
+}
+
+// * Style du conteneur de l'image paramètre pour la hauteur maximale ainsi que pour l'orientation du border-radius
+
+@mixin anchorStyle($max-height: 394px, $border-radius: 25px 0 0 25px) {
+    display: block;
+    border-radius: $border-radius;
+    max-width: 100%;
+    height: 100%;
+    max-height: $max-height;
+    overflow: hidden;
+}
+
+// * Style général de l'image header d'un poste
+// ? paramètre à réutiliser la hauteur
+
+@mixin imageStyle($height: 394px) {
+    width: 100%;
+    height: $height;
+    transition: $transition;
+}
+
+// * Style général de la boite d'infos auteur/tags/social 
+// ? paramètre à réutiliser gridGap et padding
+
+@mixin postAuthorTagsSocial($gridGap: 5px, $padding: 5px) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 50% 20%;
+    grid-gap: $gridGap;
+    position: absolute;
+    bottom: 20px;
+    right: 10%;
+    background-color: $white-color;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    padding: $padding;
+}
+
+// * Style entre la photo de l'auteur, le nom, et la date alignement du entre l'image et le conteneur infos
+// ? paramètre à réutiliser alignItems
+
+@mixin authorInfos($alignItems: center) {
+    display: flex;
+    align-items: $alignItems;
+}
+
+// * Style du contenus infos
+// ? paramètre à réutiliser fontSize
+
+@mixin infos($fontSize: 0.92em) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: $fontSize;
+}
+
+// * Style du conteneur des tags
+// ? paramètre à réutiliser alignItems
+
+@mixin postTags($alignItems: center) {
+    display: flex;
+    align-items: $alignItems;
+    justify-content: start;
+}
+
+@mixin unordoredList {
+    display: flex;
+    flex-direction: row;
+}
+
+// * Style des items tags 
+// ? paramètre à réutiliser margin
+
+@mixin listItem($margin: 0 3px) {
+    margin: $margin;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+// * Style des bouton tags
+// ? paramètre à réutiliser padding, fontSize
+
+@mixin tagsButton($padding: 3px 6px, $fontSize: 0.92em) {
+    padding: $padding;
+    font-size: $fontSize;
+    border: 1px solid $primary-color;
+    border-radius: 30px;
+    transition: $transition;
+    &:hover {
+        border-color: $hoverAndFocus-color;
+        color: $hoverAndFocus-color;
+    }
+}
+
+// * Style du conteneur social
+// ? paramètre à réutiliser fontSize
+
+@mixin social($fontSize: 0.92em) {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    font-size: $fontSize;
+}
+
+// * Style des bouton social
+// ? paramètre à réutiliser alignItems
+
+@mixin socialButton($alignItems: center) {
+    display: flex;
+    align-items: $alignItems;
+     color: $primary-color;
+     overflow: visible;
+     padding: 0 5px;
+     transition: $transition;
+     i {
+         margin-right: 5px;
+         margin-bottom: 5px;
+     }
+     &:hover {
+         color: $hoverAndFocus-color;
+     }
+}
