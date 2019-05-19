@@ -1,0 +1,342 @@
+                                    // *
+                                    // *
+                                    // ! DEBUT style général des containers
+                                    // *
+                                    // *
+
+@mixin container {
+    margin: 10px;
+    background-color: $white-color;
+    border-radius: 5px;
+    padding: 5px;
+    position: relative;
+}
+
+                                    // *
+                                    // *
+                                    // ! FIN style général des containers
+                                    // *
+                                    // *
+
+
+                                    // *
+                                    // *
+                                    // ! DEBUT style du form de recherche d'un article
+                                    // *
+                                    // *
+
+@mixin searchForm {
+    padding: 0;
+}
+
+@mixin InputContainer {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: relative;
+}
+
+@mixin input {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    padding-right: 35px;
+    border: none;
+    background-color: transparent;
+    font-size: 1.3em;
+    color: $primary-color;
+
+    &::placeholder {
+        font-style: italic;
+        letter-spacing: 0;
+        color: lighten($primary-color, 20);
+    }
+}
+
+@mixin asideBtn {
+    position: absolute;
+    right: 0;
+    width: 35px;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 1.3em;
+    border: none;
+    background-color: transparent;
+    color: $primary-color;
+    cursor: pointer;
+    transition: $transition;
+    &:hover {
+        color: $hoverAndFocus-color;
+    }
+}
+
+                                    // *
+                                    // *
+                                    // ! FIN style du form de recherche d'un article
+                                    // *
+                                    // *
+
+                                    // *
+                                    // *
+                                    // ! DEBUT style du container Auteur
+                                    // *
+                                    // *
+
+@mixin asideAuthorStyle {
+    text-align: center;
+
+    .photo-container {
+        margin: 10px auto;
+    }
+
+    h2 {
+        font-size: $medium-title-size;
+        font-weight: 400;
+        margin: 5px 0;
+    }
+
+    p {
+        line-height: 1.1em;
+        margin: 5px 0 50px 0;
+    }
+
+    .link-item {
+        @include linkStyle($primary-color);
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        text-decoration: underline;
+    }
+}
+
+                                    // *
+                                    // *
+                                    // ! FIN style du container Auteur
+                                    // *
+                                    // *
+
+                                    // *
+                                    // *
+                                    // ! DEBUT style du container contenant les post populaire et récent
+                                    // *
+                                    // *
+
+@mixin titleLink {
+     font-size: $medium-title-size;
+     font-weight: 400;
+     margin: 5px 0;
+     cursor: pointer;
+     transition: $transition;
+
+     &:hover {
+         color: $hoverAndFocus-color;
+     }
+
+     &.active {
+         color: $hoverAndFocus-color;
+         border-bottom: 2px solid $hoverAndFocus-color;
+     }
+}
+
+@mixin popAndRecContainer {
+    .post-mignature-container {
+        height: 125px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        margin: 5px 0;
+
+        .post-image {
+            width: 122px;
+            min-width: 122px;
+            height: 122px;
+            min-height: 122px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-right: 10px;
+            position: relative;
+
+            img {
+                position: absolute;
+                left: -30px;
+                width: 240px;
+            }
+        }
+
+        .post-content {
+            line-height: 1em;
+
+            .post-title-link {
+                @include linkStyle($primary-color);
+                font-weight: 500;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            p {
+                margin-bottom: 5px;
+            }
+
+            .link-item {
+                @include linkItem;
+            }
+        }
+    }
+}
+
+@mixin linkItem {
+    display: flex;
+    justify-content: flex-end;
+    @include linkStyle($primary-color);
+    text-decoration: underline;
+}
+
+                                    // *
+                                    // *
+                                    // ! FIN style du container contenant les post populaire et récent
+                                    // *
+                                    // *
+
+                                    // *
+                                    // *
+                                    // ! DEBUT style du container contenant les catégories
+                                    // *
+                                    // *
+
+@mixin catLink {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 500;
+    transition: $transition;
+    color: $primary-color;
+
+    span {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        color: $hoverAndFocus-color;
+    }
+}
+
+                                    // *
+                                    // *
+                                    // ! FIN style du container contenant les catégories
+                                    // *
+                                    // *
+
+                                    // *
+                                    // *
+                                    // ! DEBUT style du container contenant tags
+                                    // *
+                                    // *
+
+//  ? voir _postStyle.scss à partir de la ligne 102 à 140 pour connaitre les styles et les modifiés
+
+                                    // *
+                                    // *
+                                    // ! FIN style du container contenant tags
+                                    // *
+                                    // *
+
+                                    // *
+                                    // *
+                                    // ! DEBUT style du container suivez-moi !
+                                    // *
+                                    // *
+
+@mixin socialNetwork {
+     display: flex;
+     justify-content: space-around;
+     margin: 15px 0;
+     font-size: 1.5em;
+
+     li {
+         width: 60px;
+         height: 60px;
+         border: 1px solid $primary-color;
+         text-align: center;
+         border-radius: 100%;
+         transition: $transition;
+
+         a {
+             height: 100%;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             transition: $transition;
+             color: $primary-color;
+         }
+
+         &:hover {
+             border-color: $hoverAndFocus-color;
+
+             a {
+                 color: $hoverAndFocus-color;
+             }
+         }
+     }
+}
+
+                                    // *
+                                    // *
+                                    // ! FIN style du container suivez-moi !
+                                    // *
+                                    // *
+
+                                    // *
+                                    // *
+                                    // ! DEBUT style du container newsletter
+                                    // *
+                                    // *
+
+@mixin emailInputContainer {
+    position: relative;
+    margin: 15px 0;
+}
+
+@mixin emailInput {
+    width: 87%;
+    height: 100%;
+    padding: 5px;
+    padding-right: 35px;
+    border: none;
+    background-color: transparent;
+    font-size: 1.3em;
+    color: $primary-color;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+
+    &::placeholder {
+        font-style: italic;
+        letter-spacing: 0;
+        color: lighten($primary-color, 20);
+    }
+}
+
+@mixin emailSubmitButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 37px;
+    border-radius: 0 5px 5px 0;
+    background-color: $button-color;
+    color: $white-color;
+    font-size: 1.3em;
+    border: none;
+    transition: $transition;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $hoverAndFocus-color;
+    }
+}
+
+                                    // *
+                                    // *
+                                    // ! FIN style du container newsletter
+                                    // *
+                                    // *

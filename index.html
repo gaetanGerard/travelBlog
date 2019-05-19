@@ -589,7 +589,177 @@
             </div>
         </div>
         <aside>
-            <p>just some temporary content</p>
+            <form action="search.php" method="post" class="container searchForm">
+                <div class="Input-container">
+                    <input type="search" name="search" id="SearchArticle" class="searchInput" placeholder="Rechercher un article">
+                    <button type="submit" name="submit"><i class="fas fa-search"></i></button>    
+                </div> 
+            </form>
+            <div class="container asideAuthor">
+                <h1>Auteur</h1>
+                <span class="separator"></span>
+                <div class="photo-container">
+                    <img src="assets/images/images/me.png" alt="Photo de l'auteur" class="auteur-photo">
+                </div>
+                <h2>Gérard Gaétan</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet auctor ligula. Ut malesuada lacus diam, 
+                    sed...
+                </p>
+                <a href="#" class="link-item">En savoir plus</a>
+            </div>
+            <div class="container popAndRec">
+                <div class="popRec-title-container">
+                    <h2 class="title-link populaire active">Article populaire</h2>
+                    <h2 class="title-link recent">Article récent</h2>
+                </div>
+                <div class="popAndRec-container populaire active">
+                    <div class="post-mignature-container">
+                        <div class="post-image">
+                            <img src="assets/images/images/img_11.jpg" alt="Image de Thaïlande vue de nuit">
+                        </div>
+                        <div class="post-content">
+                            <a href="" class="post-title-link">Thaïlande : Bangkok vue de la skytower de nuit</a>
+                            <p class="author">Gérard Gaétan</p>
+                            <p><i class="far fa-calendar-alt"></i> 10/05/2018</p>
+                            <a href="#" class="link-item">Lire</a>
+                        </div>
+                    </div>
+                    <div class="post-mignature-container">
+                        <div class="post-image">
+                            <img src="assets/images/images/img_04.jpg" alt="Image de Tokyo">
+                        </div>
+                        <div class="post-content">
+                            <a href="" class="post-title-link">Japon : Petit détour par Tokyo avant de rentrer...</a>
+                            <p class="author">Gérard Gaétan</p>
+                            <p><i class="far fa-calendar-alt"></i> 17/03/2019</p>
+                            <a href="#" class="link-item">Lire</a>
+                        </div>
+                    </div>
+                    <div class="post-mignature-container">
+                        <div class="post-image">
+                            <img src="assets/images/images/img_12.jpg" alt="Image de Thaïlande vue de nuit">
+                        </div>
+                        <div class="post-content">
+                            <a href="" class="post-title-link">Australie : Coucher de soleil au milieu du désert</a>
+                            <p class="author">Gérard Gaétan</p>
+                            <p><i class="far fa-calendar-alt"></i> 02/06/2018</p>
+                            <a href="#" class="link-item">Lire</a>
+                        </div>
+                    </div>
+                    <div class="post-mignature-container">
+                        <div class="post-image">
+                            <img src="assets/images/images/img_13.jpg" alt="Image de Singe au Japon">
+                        </div>
+                        <div class="post-content">
+                            <a href="" class="post-title-link">Japon : Rencontre avec les habitants dans les sourc...</a>
+                            <p class="author">Gérard Gaétan</p>
+                            <p><i class="far fa-calendar-alt"></i> 30/05/2018</p>
+                            <a href="#" class="link-item">Lire</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="popAndRec-container recent unactive">
+                    <div class="post-mignature-container">
+                        <div class="post-image">
+                            <img src="assets/images/images/img_12.jpg" alt="Image de Thaïlande vue de nuit">
+                        </div>
+                        <div class="post-content">
+                            <a href="" class="post-title-link">Thaïlande : Bangkok vue de la skytower de nuit</a>
+                            <p class="author">Gérard Gaétan</p>
+                            <p><i class="far fa-calendar-alt"></i> 10/05/2018</p>
+                            <a href="#" class="link-item">Lire</a>
+                        </div>
+                    </div>
+                    <div class="post-mignature-container">
+                        <div class="post-image">
+                            <img src="assets/images/images/img_03.jpg" alt="Image de Tokyo">
+                        </div>
+                        <div class="post-content">
+                            <a href="" class="post-title-link">Japon : Petit détour par Tokyo avant de rentrer...</a>
+                            <p class="author">Gérard Gaétan</p>
+                            <p><i class="far fa-calendar-alt"></i> 17/03/2019</p>
+                            <a href="#" class="link-item">Lire</a>
+                        </div>
+                    </div>
+                    <div class="post-mignature-container">
+                        <div class="post-image">
+                            <img src="assets/images/images/img_13.jpg" alt="Image de Thaïlande vue de nuit">
+                        </div>
+                        <div class="post-content">
+                            <a href="" class="post-title-link">Japon : Rencontre avec les habitants dans les sourc...</a>
+                            <p class="author">Gérard Gaétan</p>
+                            <p><i class="far fa-calendar-alt"></i> 02/06/2018</p>
+                            <a href="#" class="link-item">Lire</a>
+                        </div>
+                    </div>
+                    <div class="post-mignature-container">
+                        <div class="post-image">
+                            <img src="assets/images/images/img_12.jpg" alt="Image de Singe au Japon">
+                        </div>
+                        <div class="post-content">
+                            <a href="" class="post-title-link">Australie : Coucher de soleil au milieu du désert</a>
+                            <p class="author">Gérard Gaétan</p>
+                            <p><i class="far fa-calendar-alt"></i> 30/05/2018</p>
+                            <a href="#" class="link-item">Lire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container categories">
+                <h1>Catégories</h1>
+                <span class="separator"></span>
+                <ul>
+                    <li><a href="#" class="cat-link">Thaïlande <span class="separator"></span> 15</a></li>
+                    <li><a href="#" class="cat-link">Japon <span class="separator"></span> 5</a></li>
+                    <li><a href="#" class="cat-link">Corée <span class="separator"></span> 2</a></li>
+                    <li><a href="#" class="cat-link">Asie <span class="separator"></span> 22</a></li>
+                    <li><a href="#" class="cat-link">Australie <span class="separator"></span> 4</a></li>
+                </ul>
+                <a href="categories.php" class="link-item">Plus de catégories</a>
+            </div>
+            <div class="container tags">
+                <h1>Tags</h1>
+                <span class="separator"></span>
+                <div class="post-tags">
+                    <ul>
+                        <li><a href="#" class="tags-button">Australie</a></li>
+                        <li><a href="#" class="tags-button">Asie</a></li>
+                        <li><a href="#" class="tags-button">Japon</a></li>
+                        <li><a href="#" class="tags-button">Corée</a></li>
+                        <li><a href="#" class="tags-button">Thaïlande</a></li>
+                        <li><a href="#" class="tags-button">île</a></li>
+                        <li><a href="#" class="tags-button">USA</a></li>
+                        <li><a href="#" class="tags-button">Bangkok</a></li>
+                        <li><a href="#" class="tags-button">Road Trip</a></li>
+                        <li><a href="#" class="tags-button">Plage</a></li>
+                        <li><a href="#" class="tags-button">Tropique</a></li>
+                        <li><a href="#" class="tags-button">Historique</a></li>
+                        <li><a href="#" class="tags-button">Tokyo</a></li>
+                        <li><a href="#" class="tags-button">Sydney</a></li>
+                        <li><a href="#" class="tags-button">Nourriture</a></li>
+                        <li><a href="#" class="tags-button">Seoul</a></li>
+                        <li><a href="#" class="tags-button">Geek</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container socialNetwork">
+                <h1>Suivez-moi !</h1>
+                <span class="separator"></span>
+                <ul>
+                    <li><a href="#" class="social-item"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" class="social-item"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#" class="social-item"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" class="social-item"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+            <form action="newsletter.php" method="post" class="container newsletter">
+                <h1>Newsletter</h1>
+                <span class="separator"></span>
+                <div class="Input-container">
+                    <input type="email" name="email" id="emailArticle" class="emailInput" placeholder="travelblog@gmail.com">
+                    <button type="submit" name="submit" class="emailSubmitBtn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </form>
         </aside>
     </div>
 

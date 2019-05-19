@@ -1,6 +1,7 @@
 @import "reset";
 @import "config";
 @import "postStyle";
+@import "asideStyle";
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -16,12 +17,15 @@ body {
 header {
     width: 100vw;
     height: 100vh;
+    position: relative;
     nav {
         width: 100vw;
         height: 250px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        position: fixed;
+        z-index: 10000;
 
         .top-nav {
             display: flex;
@@ -234,7 +238,7 @@ header {
             width: 100%;
             padding: 0 20%;
             box-sizing: border-box;
-
+            background-color: $white-color;
             ul {
                 display: flex;
                 width: 100%;
@@ -271,7 +275,8 @@ header {
         display: flex;
         flex-direction: row;
         overflow: hidden;
-        position: relative;
+        position: absolute;
+        top: 250px;
         .recentPost {
             width: 640px;
             min-width: 640px;
@@ -570,6 +575,133 @@ header {
                             color: $hoverAndFocus-color;
                         }
                     }
+                }
+            }
+        }
+    }
+    aside {
+        height: 59%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: $primary-color;
+        color: $primary-color;
+        border-radius: 15px;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        .container {
+            @include container;
+        }
+
+        h1 {
+            font-size: $title-size;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .separator {
+            display: flex;
+            margin: 0 auto;
+            width: 40%;
+            height: 2px;
+            background-color: $primary-color;
+        }
+
+        .searchForm {
+            @include searchForm;
+            .Input-container {
+                @include InputContainer;
+                .searchInput {
+                    @include input;
+                }
+                button {
+                    @include asideBtn;
+                }
+            }
+        }
+
+        .asideAuthor {
+            @include asideAuthorStyle;
+        }
+
+        .popAndRec {
+            box-sizing: border-box;
+            .popRec-title-container {
+                display: flex;
+                justify-content: space-around;
+                .title-link {
+                   @include titleLink;
+                }
+            }
+            .popAndRec-container {
+                @include popAndRecContainer;
+            }
+            .unactive {
+                display: none;
+            }
+        }
+
+        .categories {
+            h1 {
+                text-align: center;
+            }
+            .separator {
+                margin-bottom: 20px;
+            }
+            ul {
+                li {
+                    .cat-link {
+                        @include catLink;
+                    }
+                }
+            }
+            .link-item {
+                @include linkItem;
+            }
+        }
+
+        .tags {
+            h1 {
+                text-align: center;
+            }
+            .separator {
+                margin-bottom: 15px;
+            }
+            .post-tags {
+                @include postTags;
+                ul {
+                    @include unordoredList;
+                    flex-wrap: wrap;
+                    li {
+                        @include listItem;
+                        margin: 8px 4px;
+                        .tags-button {
+                            @include tagsButton(9px 15px, 1.1em, 20px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .socialNetwork {
+            h1 {
+                text-align: center;
+            }
+            ul {
+               @include socialNetwork;
+            }
+        }
+
+        .newsletter {
+            h1 {
+                text-align: center;
+            }
+            .Input-container {
+                @include emailInputContainer;
+                .emailInput {
+                    @include emailInput;
+                }
+                button {
+                    @include emailSubmitButton;
                 }
             }
         }
