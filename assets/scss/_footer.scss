@@ -1,0 +1,28 @@
+@mixin footerGeneralStyle {
+    width: 100vw;
+    height: 250px;
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    color: $white-color;
+    position: relative;
+}
+
+@mixin footerContent {
+    margin: 0 5%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin footerTitle {
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+@mixin footerCopyright {
+    display: flex;
+    justify-content: center;
+}

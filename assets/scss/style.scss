@@ -2,6 +2,7 @@
 @import "config";
 @import "postStyle";
 @import "asideStyle";
+@import "footer";
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -29,15 +30,20 @@ header {
 
         .top-nav {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             width: 100%;
             height: 125px;
             background-color: $primary-color;
+
+            .navbrand {
+                margin-left: 5%;
+            }
 
             .loginConnected-container {
                 position: relative;
                 width: 260px;
                 height: 125px;
+                margin-right: 5%;
 
                 .login {
                     width: 100%;
@@ -709,31 +715,18 @@ header {
 }
 
 footer {
-    width: 100vw;
-    height: 250px;
-    background-color: $primary-color;
-    display: flex;
-    flex-direction: column;
-    color: $white-color;
-    position: relative;
+    @include footerGeneralStyle;
     .content {
-        margin: 0 5%;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 20% 20% 20% 20% 20%;
-        justify-content: space-around;
-        align-items: center;
+       @include footerContent;
         h4 {
-            text-decoration: underline;
-            margin-bottom: 10px;
+            @include footerTitle;
         }
         a {
             @include linkStyle($white-color);
         }
     }
     .copyright {
-        display: flex;
-        justify-content: center;
+        @include footerCopyright;
     }
 }
 
