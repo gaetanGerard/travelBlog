@@ -1,4 +1,4 @@
-# travelBlog V1
+# travelBlog V1  (FIN DE PROJET REDEMARRAGE SUR DE MEILLEURS BASE) voir V2
 
 
 Repository of my travelBlog personnal project
@@ -43,6 +43,4 @@ Bien que j'utilise le flexbox et le grid ainsi que d'autre proprété et attribu
 
 # TravelBlog V2
 
-lien vers la V2 [Travel Blog V2](https://github.com/silverGraphik/travelBlogV2 "Lien ne redirigeant nul part pour l'instant")
-
-[//]: <> ("Travel Blog version responsive du projet travel Blog V1")
+lien vers la V2 [Travel Blog V2](https://github.com/silverGraphik/travelBlogV2 "Travel Blog version responsive du projet travel Blog V1")
