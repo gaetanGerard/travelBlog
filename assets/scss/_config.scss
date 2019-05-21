@@ -150,3 +150,13 @@ $lg-size: 1.4em;
         @include auteur-photo;
     }
 }
+
+@mixin headerImageSliderContainer {
+    width: 100vw;
+    height: 640px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: absolute;
+    top: 250px;
+}

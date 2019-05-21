@@ -2,7 +2,9 @@
 @import "config";
 @import "postStyle";
 @import "asideStyle";
+@import "articleStyle";
 @import "footer";
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -276,13 +278,7 @@ header {
         }
     }
     .recentPost-container {
-        width: 100vw;
-        height: 640px;
-        display: flex;
-        flex-direction: row;
-        overflow: hidden;
-        position: absolute;
-        top: 250px;
+        @include headerImageSliderContainer;
         .recentPost {
             width: 640px;
             min-width: 640px;
@@ -385,6 +381,14 @@ header {
             &:hover {
                 color: $hoverAndFocus-color;
             }
+        }
+    }
+
+    .headerArticle {
+        @include headerImageSliderContainer;
+        img {
+            width: 100vw;
+            height: 100vh;
         }
     }
 
@@ -585,8 +589,79 @@ header {
             }
         }
     }
+
+
+
+.article-container {
+    width: 100%;
+    .article {
+        @include articleShape;
+            .articleAuthor-tags {
+                @include articleAuthorTags;
+                .authorInfos {
+                    @include authorInfos(space-between);
+                    .infos {
+                        @include infos(1.1em);
+                    }
+                    .photo-container {
+                        @include photo-container;
+                        .auteur-photo {
+                            @include auteur-photo;
+                        }
+                    }
+                }
+                .article-tags {
+                    @include postTags($alignItems: flex-end);
+                    ul {
+                        @include unordoredList;
+                        li {
+                            @include listItem(0 20px);
+                            .tags-button {
+                                @include tagsButton(7px 15px, 1.1em);
+                            }
+                        }
+                    }
+                }
+            }
+    }
+    .article-content {
+        @include postContent;
+        .title {
+            @include title($title-size);
+        }
+        p {
+            margin: 20px 0;
+            line-height: 1.5em;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     aside {
-        height: 59%;
+        height: 2050px;
         width: 100%;
         display: flex;
         flex-direction: column;

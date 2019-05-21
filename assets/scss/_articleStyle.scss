@@ -1,0 +1,19 @@
+@mixin articleShape {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+@mixin articleAuthorTags {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 50%;
+    align-items: center;
+    grid-gap: 5px;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
